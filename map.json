@@ -1,0 +1,168 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 800,
+    "height": 500,
+    "projection": {
+        "type": "mercator"
+    },
+    "layer": [
+        {
+            "data": {
+                "url": "https://raw.githubusercontent.com/Kaixin0322/new_countries_map/main/Australia_map.json",
+                "format": {
+                    "type": "topojson",
+                    "feature": "1"
+                }
+            },
+            "transform": [
+                {
+                    "lookup": "properties.name",
+                    "from": {
+                        "data": {
+                            "values": [
+                                {
+                                    "id": "New South Wales",
+                                    "population": 5297089
+                                },
+                                {
+                                    "id": "Victoria",
+                                    "population": 5031195
+                                },
+                                {
+                                    "id": "Queensland",
+                                    "population": 2628083
+                                },
+                                {
+                                    "id": "South Australia",
+                                    "population": 1418455
+                                },
+                                {
+                                    "id": "Western Australia",
+                                    "population": 2224475
+                                },
+                                {
+                                    "id": "Tasmania",
+                                    "population": 252693
+                                },
+                                {
+                                    "id": "Northern Territory",
+                                    "population": 149582
+                                },
+                                {
+                                    "id": "Australian Capital Territory",
+                                    "population": 456692
+                                }
+                            ]
+                        },
+                        "key": "id",
+                        "fields": [
+                            "population"
+                        ]
+                    }
+                }
+            ],
+            "mark": {
+                "type": "geoshape",
+                "stroke": "white"
+            },
+            "encoding": {
+                "color": {
+                    "field": "population",
+                    "type": "quantitative",
+                    "title": "population"
+                },
+                "tooltip": [
+                    {
+                        "field": "properties.name",
+                        "type": "nominal",
+                        "title": "State"
+                    },
+                    {
+                        "field": "population",
+                        "type": "quantitative",
+                        "title": "population"
+                    }
+                ]
+            }
+        },
+        {
+            "data": {
+                "values": [
+                    {
+                        "city": "Sydney",
+                        "lng": 151.2093,
+                        "lat": -33.8688
+                    },
+                    {
+                        "city": "Melbourne",
+                        "lng": 144.9631,
+                        "lat": -37.8136
+                    },
+                    {
+                        "city": "Brisbane",
+                        "lng": 153.0251,
+                        "lat": -27.4698
+                    },
+                    {
+                        "city": "Perth",
+                        "lng": 115.8575,
+                        "lat": -31.9505
+                    },
+                    {
+                        "city": "Adelaide",
+                        "lng": 138.6007,
+                        "lat": -34.9285
+                    },
+                    {
+                        "city": "Canberra",
+                        "lng": 149.13,
+                        "lat": -35.2809
+                    },
+                    {
+                        "city": "Hobart",
+                        "lng": 147.3294,
+                        "lat": -42.8821
+                    },
+                    {
+                        "city": "Darwin",
+                        "lng": 130.8456,
+                        "lat": -12.4634
+                    }
+                ]
+            },
+            "encoding": {
+                "longitude": {
+                    "field": "lng",
+                    "type": "quantitative"
+                },
+                "latitude": {
+                    "field": "lat",
+                    "type": "quantitative"
+                },
+                "color": {
+                    "value": "red"
+                }
+            },
+            "layer": [
+                {
+                    "mark": "point"
+                },
+                {
+                    "mark": {
+                        "type": "text",
+                        "dy": -10
+                    },
+                    "encoding": {
+                        "text": {
+                            "field": "city"
+                        },
+                        "color": {
+                            "value": "black"
+                        }
+                    }
+                }
+            ]
+        }
+    ],
+    "config": {}
+}

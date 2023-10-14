@@ -1,0 +1,35 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 500,
+    "height": 300,
+    "title": "Prices for three bedroom houses from Melbourne city center from near to far in 2021",
+    "description": "A scatterplot showing distance and three bedroom houses price for various Local Government Areas.",
+    "data": {
+        "url": "https://raw.githubusercontent.com/Kaixin0322/bubble_chart_dataset/main/ScatterPlot2_dataset%20-%20Sheet1%20(1).csv"
+    },
+    "mark": "point",
+    "encoding": {
+        "x": {
+            "field": "Distance from Melbourne city center(km)",
+            "type": "quantitative"
+        },
+        "y": {
+            "field": "Estimated price for a 3-bedroom house price($)",
+            "type": "quantitative"
+        },
+        "tooltip": [
+            {
+                "field": "Local Government Areas ",
+                "type": "nominal"
+            },
+            {
+                "field": "Distance from Melbourne city center(km)",
+                "type": "quantitative"
+            },
+            {
+                "field": "Estimated price for a 3-bedroom house price($)",
+                "type": "quantitative"
+            }
+        ]
+    }
+}

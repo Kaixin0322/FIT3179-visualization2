@@ -1,0 +1,174 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 1000,
+    "height": 400,
+    "title": "Average house price trends in Australia's capital cities over the recent decade",
+    "data": {
+        "url": "https://raw.githubusercontent.com/Kaixin0322/new_property_price_capital_city_dataset/main/new_property_price_capital_city%20.csv"
+    },
+    "params": [
+        {
+            "name": "City_selection",
+            "bind": {
+                "input": "select",
+                "options": [
+                    null,
+                    "Adelaide",
+                    "Brisbane",
+                    "Canberra",
+                    "Darwin",
+                    "Hobart",
+                    "Melbourne",
+                    "Perth",
+                    "Sydney"
+                ],
+                "labels": [
+                    "Show All",
+                    "Adelaide",
+                    "Brisbane",
+                    "Canberra",
+                    "Darwin",
+                    "Hobart",
+                    "Melbourne",
+                    "Perth",
+                    "Sydney"
+                ]
+            }
+        }
+    ],
+    "transform": [
+        {
+            "filter": "City_selection == null || datum['Capital City'] == City_selection"
+        }
+    ],
+    "encoding": {
+        "x": {
+            "field": "Date",
+            "type": "ordinal",
+            "title": "Date",
+            "sort": [
+                "Dec-11",
+                "Mar-12",
+                "Jun-12",
+                "Sep-12",
+                "Dec-12",
+                "Mar-13",
+                "Jun-13",
+                "Sep-13",
+                "Dec-13",
+                "Mar-14",
+                "Jun-14",
+                "Sep-14",
+                "Dec-14",
+                "Mar-15",
+                "Jun-15",
+                "Sep-15",
+                "Dec-15",
+                "Mar-16",
+                "Jun-16",
+                "Sep-16",
+                "Dec-16",
+                "Mar-17",
+                "Jun-17",
+                "Sep-17",
+                "Dec-17",
+                "Mar-18",
+                "Jun-18",
+                "Sep-18",
+                "Dec-18",
+                "Mar-19",
+                "Jun-19",
+                "Sep-19",
+                "Dec-19",
+                "Mar-20",
+                "Jun-20",
+                "Sep-20",
+                "Dec-20",
+                "Mar-21",
+                "Jun-21",
+                "Sep-21",
+                "Dec-21"
+            ]
+        },
+        "y": {
+            "field": "Residential Property Price($)",
+            "type": "quantitative",
+            "title": "Residential Property Price ($)",
+            "axis": {
+                "tickCount": 6
+            },
+            "scale": {
+                "domain": [
+                    0,
+                    240
+                ]
+            }
+        }
+    },
+    "layer": [
+        {
+            "mark": "line",
+            "encoding": {
+                "color": {
+                    "field": "Capital City",
+                    "type": "nominal",
+                    "title": "Capital City",
+                    "legend": {
+                        "symbolType": "stroke"
+                    }
+                }
+            }
+        },
+        {
+            "mark": "point",
+            "selection": {
+                "hover": {
+                    "type": "single",
+                    "on": "mouseover",
+                    "nearest": true,
+                    "empty": "none",
+                    "fields": [
+                        "Date",
+                        "Residential Property Price($)"
+                    ],
+                    "clear": "mouseout"
+                }
+            },
+            "encoding": {
+                "x": {
+                    "field": "Date",
+                    "type": "ordinal"
+                },
+                "y": {
+                    "field": "Residential Property Price($)",
+                    "type": "quantitative"
+                },
+                "color": {
+                    "field": "Capital City",
+                    "type": "nominal"
+                },
+                "opacity": {
+                    "condition": {
+                        "selection": "hover",
+                        "value": 1
+                    },
+                    "value": 0
+                },
+                "tooltip": [
+                    {
+                        "field": "Date",
+                        "type": "ordinal"
+                    },
+                    {
+                        "field": "Residential Property Price($)",
+                        "type": "quantitative"
+                    },
+                    {
+                        "field": "Capital City",
+                        "type": "nominal"
+                    }
+                ]
+            }
+        }
+    ]
+}

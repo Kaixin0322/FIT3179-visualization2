@@ -1,0 +1,18 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 500,
+  "height": 300,
+  "title":"Population from near to far from Melbourne city center in 2021",
+  "description": "A scatterplot showing distance and population size for various Local Government Areas.",
+  "data": {"url": "https://raw.githubusercontent.com/Kaixin0322/bubble_chart_dataset/main/Scatterplot1_dataset%20-%20Sheet1.csv"},
+  "mark": "point",
+  "encoding": {
+    "x": {"field": "Distance from Melbourne city center(km)", "type": "quantitative"},
+    "y": {"field": "Population size range", "type": "quantitative"},
+    "tooltip": [
+      {"field": "Local Government Areas ", "type": "nominal"},
+      {"field": "Distance from Melbourne city center(km)", "type": "quantitative"},
+      {"field": "Population size range", "type": "quantitative"}
+    ]
+  }
+}

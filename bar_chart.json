@@ -1,0 +1,48 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 500,
+    "height": 300,
+    "description": "Top 10 Melbourne city center neighborhoods for number of crime incidents in 2022.",
+    "title": "Top 10 Melbourne city center neighborhoods for number of crime incidents in 2021",
+    "data": {
+        "url": "https://raw.githubusercontent.com/Kaixin0322/bubble_chart_dataset/main/bar_chart%20dataset%20-%20Sheet1.csv"
+    },
+    "encoding": {
+        "y": {
+            "field": "Local Government Areas ",
+            "type": "nominal"
+        },
+        "x": {
+            "field": "Total Criminal Incidents(case)",
+            "type": "quantitative",
+            "scale": {
+                "domain": [
+                    0,
+                    15000
+                ]
+            }
+        }
+    },
+    "layer": [
+        {
+            "mark": {
+                "type": "bar",
+                "color": "#5a8fd1"
+            }
+        },
+        {
+            "mark": {
+                "type": "text",
+                "align": "left",
+                "baseline": "middle",
+                "dx": 3
+            },
+            "encoding": {
+                "text": {
+                    "field": "Total Criminal Incidents(case)",
+                    "type": "quantitative"
+                }
+            }
+        }
+    ]
+}
