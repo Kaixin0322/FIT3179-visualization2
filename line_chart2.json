@@ -1,7 +1,7 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "width": 500,
-    "height": 300,
+    "width": 400,
+    "height": 200,
     "title": "Trends in homeownership rates by year of birth from 1947 - 1996",
     "description": "Trends in homeownership rates by birth cohort and year group.",
     "data": {
