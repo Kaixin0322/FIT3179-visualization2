@@ -1,0 +1,176 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 300,
+    "height": 200,
+    "title": "Trends in homeownership rates by year of birth from 1947 - 1996",
+    "description": "Trends in homeownership rates by birth cohort and year group.",
+    "data": {
+        "url": "https://raw.githubusercontent.com/Kaixin0322/bubble_chart_dataset/main/Line_chart2_dataset%20-%20Sheet1.csv"
+    },
+    "params": [
+        {
+            "name": "SelectYearGroup",
+            "value": null,
+            "bind": {
+                "input": "select",
+                "options": [
+                    null,
+                    "1947-1951",
+                    "1952-1956",
+                    "1957-1961",
+                    "1962-1966",
+                    "1967-1971",
+                    "1972-1976",
+                    "1977-1981",
+                    "1982-1986",
+                    "1987-1991",
+                    "1992-1996"
+                ],
+                "labels": [
+                    "Show All",
+                    "1947-1951",
+                    "1952-1956",
+                    "1957-1961",
+                    "1962-1966",
+                    "1967-1971",
+                    "1972-1976",
+                    "1977-1981",
+                    "1982-1986",
+                    "1987-1991",
+                    "1992-1996"
+                ]
+            }
+        }
+    ],
+    "transform": [
+        {
+            "filter": "SelectYearGroup === null || datum['Year group'] === SelectYearGroup"
+        }
+    ],
+    "encoding": {
+        "color": {
+            "field": "Year group",
+            "type": "nominal",
+            "title": "Year group",
+            "legend": {
+                "symbolType": "stroke"
+            }
+        },
+        "x": {
+            "field": "Birth cohort",
+            "type": "nominal",
+            "title": "Birth cohort",
+            "axis": {
+                "labelAngle": 360
+            },
+            "scale": {
+                "domain": [
+                    "25-29",
+                    "30-34",
+                    "35-39",
+                    "40-44",
+                    "45-49",
+                    "50-54",
+                    "55-59",
+                    "60-64",
+                    "65-69",
+                    "70-74"
+                ]
+            }
+        },
+        "y": {
+            "field": "Proportion of people who own property(%)",
+            "type": "quantitative",
+            "title": "Homeownership Rate (%)",
+            "axis": {
+                "tickCount": 8
+            },
+            "scale": {
+                "domain": [
+                    0,
+                    90
+                ]
+            }
+        }
+    },
+    "layer": [
+        {
+            "mark": "line",
+            "encoding": {
+                "color": {
+                    "field": "Year group",
+                    "type": "nominal",
+                    "title": "Year group",
+                    "legend": {
+                        "symbolType": "stroke"
+                    }
+                }
+            }
+        },
+        {
+            "mark": "point",
+            "encoding": {
+                "color": {
+                    "field": "Year group",
+                    "type": "nominal"
+                }
+            },
+            "encoding": {
+                "x": {
+                    "field": "Birth cohort",
+                    "type": "nominal"
+                },
+                "y": {
+                    "field": "Proportion of people who own property(%)",
+                    "type": "quantitative"
+                },
+                "color": {
+                    "field": "Year group",
+                    "type": "nominal"
+                },
+                "tooltip": [
+                    {
+                        "field": "Birth cohort",
+                        "type": "nominal"
+                    },
+                    {
+                        "field": "Year group",
+                        "type": "nominal"
+                    },
+                    {
+                        "field": "Proportion of people who own property(%)",
+                        "type": "quantitative"
+                    }
+                ]
+            }
+        },
+        {
+            "mark": {
+                "type": "text",
+                "align": "left",
+                "baseline": "middle",
+                "dx": 5
+            },
+            "encoding": {
+                "x": {
+                    "field": "Birth cohort",
+                    "type": "nominal",
+                    "aggregate": "max"
+                },
+                "y": {
+                    "field": "Proportion of people who own property",
+                    "type": "quantitative",
+                    "aggregate": "mean"
+                },
+                "color": {
+                    "field": "Year group",
+                    "type": "nominal"
+                },
+                "text": {
+                    "field": "Year group",
+                    "type": "nominal"
+                }
+            }
+        }
+    ]
+}
