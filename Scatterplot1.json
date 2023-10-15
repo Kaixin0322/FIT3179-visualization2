@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "width": 450,
+  "width": 480,
   "height": 270,
   "title":"Population from near to far from Melbourne city center in 2021",
   "description": "A scatterplot showing distance and population size for various Local Government Areas.",
