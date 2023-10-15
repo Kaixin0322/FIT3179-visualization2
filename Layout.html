@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
+
+    <script src="Layout.js"></script>
+
+    <title>Data visualization2</title>
+
+    <link rel="stylesheet" href="Layout.css">
+</head>
+<span class=''> </span>
+
+<body>
+    <div class="background-container">
+        <h1>Analysis of various aspects of home buying in Australia (Melbourne)</h1>
+        <div class="map-container">
+            <h2>Population distribution of Australian capital cities in 2021</h2>
+            <p>As the Australian real estate market continues to evolve, it becomes particularly
+                important to
+                understand its
+                historical trends and current conditions. This visualization aims to shed light on house price
+                changes
+                in
+                Australia, and <span class='Melbourne'>Melbourne</span> in particular, over the past decade, and the
+                demographic and geographic factors
+                associated with them. By analyzing population distribution, house price trends, house type share and
+                geographic
+                location together, investors, real estate developers and ordinary consumers can make decisions and
+                strategies
+                with greater clarity.</p>
+            <div class="content-wrapper">
+                <div id="map"></div>
+                <p class="right-p">According to the map it can be seen that the state with the highest population is
+                    <span class='New_south_wales'>New south Wales</span> followed by <span
+                        class='Victoria'>Victoria</span>.
+                    The majority of the population is located along the south
+                    east coast
+                    of Australia. The capital cities
+                    of these two states are <span class='Sydney'>Sydney</span> and <span
+                        class='Melbourne'>Melbourne</span>
+                    respectively. Therefore, based on the map of population
+                    distribution it is concluded that the demand for housing is higher in the cities of <span
+                        class='Melbourne'>Melbourne</span> and <span class='Sydney'>Sydney</span>
+                </p>
+            </div>
+        </div>
+        <div class="line-chart-container">
+            <h2>House Price Trends (2011-2021)</h2>
+            <div id="line-chart"></div>
+            <div class="content-wrapper">
+                <p>It shows residential property price trends in several Australian capital cities over the period
+                    2011-2021. As you
+                    can see from the graph, most of the cities show significant price increases. <span
+                        class='Sydney'>Sydney</span>
+                    and <span class='Melbourne'> Melbourne </span> have seen
+                    particularly significant house price growth. <span class='Sydney'>Sydney</span>, which is number one
+                    in
+                    population size <span class='New_south_wales'>New south Wales</span>, has
+                    the fastest growing house prices. Population number two <span class='Melbourne'>Melbourne</span> in
+                    <span class='Victoria'>Victoria</span> is a close second. This suggests
+                    that property prices are likely to follow suit and continue to rise. This is because the <span
+                        class='Sydney'>Sydney</span> house price
+                    market is likely to be saturated. However <span class='Melbourne'>Melbourne</span> has the potential
+                    to
+                    continue to rise. Therefore it makes
+                    more sense to analyze the <span class='Melbourne'>Melbourne</span> house price market.
+                </p>
+            </div>
+        </div>
+        <div class="Scatterplot-container">
+            <h2>Population size distribution and property prices in relation to distance from city center</h2>
+            <div class="plots-wrapper">
+                <div class="content-wrapper2">
+                    <div id="Scatterplot1"></div>
+                    <p class="right-p1">This scatterplot shows the distribution of population at different distances
+                        from
+                        <span class='Melbourne'>Melbourne</span> city
+                        center in 2021. As can be seen from the graph, <span class='Melbourne'>Melbourne</span> city
+                        center and its immediate suburbs
+                        (within about 50 km) are the most densely populated. As the distance increases, especially after
+                        250km, the population decreases significantly. This suggests that most people tend to live in or
+                        near the city center, probably because of the amenities, work and ease of living there. Areas
+                        away from city centers, on the other hand, are less populated, possibly because of their
+                        remoteness or more limited resources.
+                    </p>
+                </div>
+                <div class="content-wrapper2">
+                    <div id="Scatterplot2"></div>
+                    <p class="right-p1">This scatterplot shows the distribution of prices for three-bedroom homes at
+                        different distances
+                        from <span class='Melbourne'>Melbourne</span> city center in 2021. As can be seen from the
+                        graph, prices are relatively high
+                        in areas closer to the city center (within about 50 km), especially in the areas closest to the
+                        city center. However, when the distance exceeds 50 kilometers, prices start to gradually
+                        decline. After 250 kilometers, house prices do not change much and remain at a relatively low
+                        level. This may indicate that there is a higher demand for homes in the city center and its
+                        immediate suburbs, leading to higher prices, while areas away from the city center, due to
+                        remoteness or other factors, have relatively low and stable house prices.</p>
+                </div>
+                <div class="content-wrapper">
+                    <p>The closer the location is to the city center, the higher the house price and population of
+                        three-bedroom
+                        apartments. In particular, within 100 kilometers of the city center, both house prices and
+                        population
+                        show a
+                        clear downward trend. In areas over 100km, house prices and population are declining at a
+                        relatively
+                        slow rate
+                        and in some places show a stabilizing or slightly increasing trend. <span
+                            class='Melbourne'>Melbourne</span>
+                        city center and its nearby areas
+                        attract more people to live there due to its convenience and prosperity, which pushes up house
+                        prices.
+                        In areas
+                        away from the city center, the supply and demand for housing is relatively balanced due to a
+                        smaller
+                        population,
+                        resulting in relatively stable prices.</p>
+                </div>
+            </div>
+        </div>
+        <div class="two-charts-container">
+            <div class="line2_chart-container">
+                <h2>Analysis of homeownership rates in the continuous birth cohort</h2>
+                <div id="line_chart2"></div>
+                <p class="right-p1">The homeownership rate is 67% in 2021, down from 70% in 2006. Beginning in 1971,
+                    homeownership rates
+                    for
+                    younger
+                    age groups such as 30-34 and 25-29 declined significantly. At the same time, homeownership rates for
+                    earlier
+                    birth cohorts, such as 1947-1951, have trended upward over their lifetimes. However, more recent
+                    birth
+                    cohorts
+                    generally have lower homeownership rates compared to birth cohorts from earlier eras. This reflects
+                    differences
+                    in homeownership between age and birth cohorts. Continuous birth cohorts have consistently lower
+                    homeownership
+                    rates than older cohorts.</p>
+            </div>
+            <div class="bar_chart-container">
+                <h2>Top 10 crime local government areas near Melbourne city center in 2021</h2>
+                <div id="bar_chart"></div>
+                <p class="right-p1"><span class='Melbourne'>Melbourne</span> City Center had the highest crime rate with
+                    a
+                    staggering
+                    13,712
+                    incidents, while "Glen Eira" had the
+                    lowest with only 5,127 incidents. The rest of the neighborhoods fall in between. For those
+                    considering
+                    buying or
+                    renting a home in <span class='Melbourne'>Melbourne</span> city center, it's important to consider
+                    the
+                    safety
+                    factor. Based on this data, if
+                    safety is a priority, they may be more likely to choose an area with a relatively low crime rate
+                    such as
+                    'Glen
+                    Eira'. Additionally, for investors, knowing this data can help them make more informed investment
+                    decisions, as
+                    choosing safer areas may increase the attractiveness and value of their properties. In conclusion,
+                    whether you
+                    are a resident or an investor, knowing the local crime rate is an important consideration.</p>
+            </div>
+
+        </div>
+        <div class="end-container">
+            <p>Course:FIT3179 DATA VISUALIZATION; Author:Kaixin Xu; StudentID: 32770332; Date: 15/10/2023</p>
+        </div>
+    </div>
+</body>
+
+</html>
