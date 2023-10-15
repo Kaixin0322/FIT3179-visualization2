@@ -10,9 +10,23 @@
     "params": [
         {
             "name": "SelectYearGroup",
+            "value": null,
             "bind": {
                 "input": "select",
                 "options": [
+                    null,
+                    "1947-1951",
+                    "1952-1956",
+                    "1957-1961",
+                    "1962-1966",
+                    "1967-1971",
+                    "1972-1976",
+                    "1977-1981",
+                    "1982-1986",
+                    "1987-1991",
+                    "1992-1996"
+                ],
+                "labels": [
                     "Show All",
                     "1947-1951",
                     "1952-1956",
@@ -30,7 +44,7 @@
     ],
     "transform": [
         {
-            "filter": "SelectYearGroup === 'Show All' || datum['Year group'] === SelectYearGroup"
+            "filter": "SelectYearGroup === null || datum['Year group'] === SelectYearGroup"
         }
     ],
     "encoding": {
@@ -50,7 +64,18 @@
                 "labelAngle": 360
             },
             "scale": {
-                "domain": ["25-29", "30-34", "35-39", "40-44", "45-49", "50-54", "55-59", "60-64", "65-69", "70-74"] 
+                "domain": [
+                    "25-29",
+                    "30-34",
+                    "35-39",
+                    "40-44",
+                    "45-49",
+                    "50-54",
+                    "55-59",
+                    "60-64",
+                    "65-69",
+                    "70-74"
+                ]
             }
         },
         "y": {
@@ -61,7 +86,10 @@
                 "tickCount": 8
             },
             "scale": {
-                "domain": [0, 90]
+                "domain": [
+                    0,
+                    90
+                ]
             }
         }
     },
@@ -118,37 +146,31 @@
         },
         {
             "mark": {
-              "type": "text",
-              "align": "left",
-              "baseline": "middle",
-              "dx": 5
+                "type": "text",
+                "align": "left",
+                "baseline": "middle",
+                "dx": 5
             },
             "encoding": {
-              "x": {
-                "field": "Birth cohort",
-                "type": "nominal",
-                "aggregate": "max"
-              },
-              "y": {
-                "field": "Proportion of people who own property",
-                "type": "quantitative",
-                "aggregate": "mean"
-              },
-              "color": {
-                "field": "Year group",
-                "type": "nominal"
-              },
-              "text": {
-                "field": "Year group",
-                "type": "nominal"
-              }
-            },
-            "transform": [
-              {
-                "filter": "datum['Birth cohort'] === '70-74'"
-              }
-            ]
-          }
-        ]
-    }
-      
+                "x": {
+                    "field": "Birth cohort",
+                    "type": "nominal",
+                    "aggregate": "max"
+                },
+                "y": {
+                    "field": "Proportion of people who own property",
+                    "type": "quantitative",
+                    "aggregate": "mean"
+                },
+                "color": {
+                    "field": "Year group",
+                    "type": "nominal"
+                },
+                "text": {
+                    "field": "Year group",
+                    "type": "nominal"
+                }
+            }
+        }
+    ]
+}
