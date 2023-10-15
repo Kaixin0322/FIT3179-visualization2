@@ -1,6 +1,6 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "width": 450,
+    "width": 430,
     "height": 270,
     "title": "Prices for three bedroom houses from Melbourne city center from near to far in 2021",
     "description": "A scatterplot showing distance and three bedroom houses price for various Local Government Areas.",
