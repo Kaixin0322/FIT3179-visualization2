@@ -1,7 +1,7 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "width": 600,
-    "height": 200,
+    "width": 800,
+    "height": 400,
     "title": "Average house price trends in Australia's capital cities over the recent decade",
     "data": {
         "url": "https://raw.githubusercontent.com/Kaixin0322/new_property_price_capital_city_dataset/main/new_property_price_capital_city%20.csv"
