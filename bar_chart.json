@@ -1,7 +1,7 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "width": 500,
-    "height": 300,
+    "width": 400,
+    "height": 200,
     "description": "Top 10 Melbourne city center neighborhoods for number of crime incidents in 2022.",
     "title": "Top 10 Melbourne city center neighborhoods for number of crime incidents in 2021",
     "data": {
